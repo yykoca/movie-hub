@@ -1,21 +1,26 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Header from './Pages/Header';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import Header from "./Pages/Header";
+import Home from "./Pages/Home";
+import Favorites from "./Pages/Favorites";
+import Watched from "./Pages/Watched";
+import About from "./Pages/About";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 function App() {
   return (
-    <Router>
+    <>
       <Header />
-      <Switch>
-        {/* <Route exact path="/" component={Home}/> */}
-        {/* <Route path="/favorites" component={Favorites}/> */}
-        {/* <Route path="/watched" component={Watched Films}/> */}
-        {/* <Route path="/about" component={About}/> */}
-        
-      </Switch>
-    </Router>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/favorites" component={Favorites} />
+          <Route path="/watched" component={Watched} />
+          <Route path="/about" component={About} />
+        </Switch>
+      </Router>
+    </>
   );
 }
 
