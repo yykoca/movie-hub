@@ -1,5 +1,7 @@
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import TMDB from "./API/TMDB";
 import Header from "./Pages/Header";
 import Home from "./Pages/Home";
 import Favorites from "./Pages/Favorites";
@@ -9,12 +11,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {
+  const [movies, setMovies] = useState([]);
+  const [pageNumber, setPageNumber] = useState(1);
+
+  useEffect(() => {
+    TMDB.topRatedMovies(pageNumber).then((movie) => setMovies(movie));
+  }, [pageNumber]);
+
   return (
     <>
       <Header />
       <Router>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" render={() => <Home movies={movies} pageNumber={pageNumber} setPageNumber={setPageNumber} />} />
           <Route path="/favorites" component={Favorites} />
           <Route path="/watched" component={Watched} />
           <Route path="/about" component={About} />
