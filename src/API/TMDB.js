@@ -21,7 +21,7 @@ async function topRatedMovies(pageNumber = 1) {
   movies = await fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      console.log("result",data.results);
+      // console.log("result",data.results);
       data.results.forEach(tmdbMovie => {
         let movieObject = makeMovieObject(tmdbMovie);
         movies.push(movieObject);
