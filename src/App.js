@@ -23,7 +23,7 @@ function App() {
       <Header />
       <Router>
         <Switch>
-          <Route exact path="/" render={() => <Home movies={movies} pageNumber={pageNumber} setPageNumber={setPageNumber} />} />
+          <Route exact path="/movie-hub" render={() => <Home movies={movies} pageNumber={pageNumber} setPageNumber={setPageNumber} />} />
           <Route path="/favorites" component={Favorites} />
           <Route path="/watched" component={Watched} />
           <Route path="/about" component={About} />

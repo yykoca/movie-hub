@@ -1,6 +1,6 @@
 {
-  "homepage": "http://yykoca.github.io/movie-hub",
   "name": "movie-hub",
+  "homepage": "http://yykoca.github.io/movie-hub",
   "version": "0.1.0",
   "private": true,
   "type": "module",

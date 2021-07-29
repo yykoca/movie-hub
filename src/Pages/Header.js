@@ -5,13 +5,13 @@ import { BiCameraMovie } from 'react-icons/bi';
 function Header() {
   return (
     <Navbar collapseOnSelect bg="dark" expand="lg" variant="dark">
-      <Navbar.Brand href="/"><BiCameraMovie /> Movie-Hub</Navbar.Brand>
+      <Navbar.Brand href="/movie-hub"><BiCameraMovie /> Movie-Hub</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav
           className="mr-auto my-2 my-lg-0 justify-content-end"
           style={{ maxHeight: "100px" }}>
-          <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link href="/movie-hub">Home</Nav.Link>
           <Nav.Link href="/favorites">Favorites</Nav.Link>
           <Nav.Link href="/watched">Watched Films</Nav.Link>
           <Nav.Link href="/about">About</Nav.Link>
